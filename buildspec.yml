@@ -1,13 +1,25 @@
 version: 0.2
 
 phases:
+  install:
+    commands:
+      - echo install all packages
+    finally:
+      - echo next step to go
+  pre_build:
+    commands:
+      - echo pre_build face start
+    finally:
+      - echo next step to go
   build:
     commands:
-    - echo "This is build phase... Zipping my webpage"
- 
+      - echo build face
+    finally:
+      - echo next step to go
   post_build:
     commands:
-    - echo "Deployed to S3"
-artifacts:
-  files:
-    - '**/*'
+      - echo post_build start
+    finally:
+      - echo next complete
+
+
